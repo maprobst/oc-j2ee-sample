@@ -5,6 +5,7 @@
 # /tmp/artifacts will only be present in the incremental build scenario
 # in which the target image name is an existing docker image which contains
 # dependencies from a prior build execution.
+echo "start own application"
 function restore_saved_artifacts() {
   if [ -f /tmp/artifacts/maven.tar.gz ]; then
     pushd / &> /dev/null
