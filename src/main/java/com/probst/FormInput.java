@@ -63,7 +63,7 @@ public class FormInput {
 				File customDir = new File(path);
 
 				if (!customDir.exists()) {
-					customDir.mkdir();
+					customDir.mkdirs();
 				}
 				File file = new File(customDir, fileName);
 				writeFile(bytes, file);
@@ -96,9 +96,6 @@ public class FormInput {
 	// Utility method
 	private void writeFile(byte[] content, File file) throws IOException {
 		System.out.println("----->" + file.getAbsolutePath());
-		if (!file.exists()) {
-			file.createNewFile();
-		}
 		FileOutputStream fop = new FileOutputStream(file);
 		fop.write(content);
 		fop.flush();
